@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    
+    <form action="/product/editProduct/{{getEditdt._id}}" method="post" enctype="multipart/form-data">
+        
+        
+       {{!-- <h1> {{getEditdt.multifiles.[0].filename}}</h1> --}}
+        <img style="width: 50px; height:50px" src="/images/{{getEditdt.multifiles.[0].filename}}" alt="" id="imgview" class="mb-2">
+        <input type="file" name="multifiles" accept="image/*" value="{{getEditdt.multifiles.[0].filename}}" onchange="viewImage(event)"  multiple>
+        
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Product Name</label>
+            <input type="text" class="form-control" value="{{getEditdt.productname}}" name="productname">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Price</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" value="{{getEditdt.price}}" name="price">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>
+
+<script>
+    function viewImage(event) {
+        document.getElementById('imgview').src = URL.createObjectURL(event.target.files[0])
+        imgview.onchange = evt => {
+
+        }
+
+    }
+
+</script>

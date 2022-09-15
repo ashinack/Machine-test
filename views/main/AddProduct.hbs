@@ -1,0 +1,15 @@
+<div class="container mt-5">
+<form action="/product/add-to-cart" method="post" enctype="multipart/form-data">
+<input type="file" name="multifiles" accept="image/*" multiple>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Product Name</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="productname">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Price</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="price">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</div>

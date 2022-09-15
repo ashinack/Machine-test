@@ -1,0 +1,66 @@
+<div class="container" class="card">
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-6">
+    {{#each data}}
+    
+   
+        <div class="col mt-5">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <div>
+                        {{!-- {{#each this.multifiles}} --}}
+                        <img src='images/{{this.multifiles.[0].filename}}' style="width: 190px; height: 100px;" alt="">
+                        {{!-- {{/each}} --}}
+                    </div>
+                    <h5 class="card-title">{{this.price}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.productname}}</h6>
+                    <a href="/product/edit-product/{{this._id}}">
+                        <i class='bx bxs-edit-alt'>
+    
+                        </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+   
+    
+    
+    
+    {{/each}}
+    <a href="product/add">Add product</a>
+    </div>
+    <div class="col-6">
+        
+
+{{#each total}}
+<div class="col mt-5">
+    
+    <div class="card" style="width: 18rem;">
+        
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">MRP: {{this.price}}</li>
+            <li class="list-group-item">SHIPPING CHARGE: {{this.shippingCharge}}</li>
+            <li class="list-group-item">DISCOUNT: {{this.discount}}%</li>
+            <li class="list-group-item">TOTAL: {{this.subtotal}}</li>
+        </ul>
+    </div>
+</div>
+{{/each}}
+</div>
+
+    </div>
+{{!-- </div>
+</div> --}}
+</div>
+
+

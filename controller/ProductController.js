@@ -85,4 +85,15 @@ const editProduct = async (req, res) => {
     }
 }
 
-module.exports = { addToCart, upload, edit_Product, editProduct }
+const deleteProduct=async(req,res)=>{
+    const id=req.params.id
+    try {
+        await Cart.deleteOne({_id:id})
+        res.redirect('/')
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+
+    }
+
+}
+module.exports = { addToCart, upload, edit_Product, editProduct, deleteProduct }

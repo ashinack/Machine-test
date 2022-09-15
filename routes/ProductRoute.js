@@ -1,6 +1,6 @@
 var express = require('express');
 let router = express.Router();
-const { addToCart, upload, edit_Product, editProduct } = require('../controller/ProductController')
+const { addToCart, upload, edit_Product, editProduct, deleteProduct } = require('../controller/ProductController')
 
 
 
@@ -15,6 +15,8 @@ router.post('/add-to-cart', upload.array('multifiles'), addToCart)
 router.get('/edit-product/:id', edit_Product)
 
 router.post('/editProduct/:id', upload.array('multifiles'),editProduct)
+
+router.get('/delete-product/:id',deleteProduct)
 
 
 
